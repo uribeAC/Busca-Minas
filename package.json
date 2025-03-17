@@ -6,7 +6,8 @@
     "start": "serve public",
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "test": "node public/js/analysis/__tests__/"
+    "test": "node public/js/analysis/__tests__/",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +15,11 @@
   "type": "module",
   "description": "",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/node": "^22.13.1",
-    "typescript": "^5.7.3",
-    "serve": "^14.2.4"
-  },
-  "dependencies": {}
+    "husky": "^9.1.7",
+    "serve": "^14.2.4",
+    "typescript": "^5.7.3"
+  }
 }
