@@ -3,7 +3,13 @@ body {
   margin: 0;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -32,4 +38,15 @@ h1 {
   text-shadow: #ebbf4669 2px 5px;
   letter-spacing: 2px;
   text-align: center;
+}
+
+.introduction {
+  padding: 16px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  background-color: #4b555657;
 }
