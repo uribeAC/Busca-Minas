@@ -1,6 +1,13 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: VT323;
   margin: 0;
+  height: 100%;
 }
 
 h1,
@@ -11,6 +18,18 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.container {
+  height: 90vh;
+  margin: 5vh auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border: 8px solid rgb(25, 0, 255);
+  border-radius: 20px;
+  outline: 5px solid rgb(0, 115, 255);
+  outline-offset: 10px;
 }
 
 .main-header {
@@ -43,7 +62,6 @@ p {
 .introduction {
   padding: 16px;
   margin: auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
