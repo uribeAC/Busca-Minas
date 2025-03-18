@@ -1,12 +1,12 @@
 {
-  "name": "w1-text-analyzer",
+  "name": "w3-mine-sweeper",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "serve public",
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "test": "node public/js/analysis/__tests__/",
+    "test": "node public/js/",
     "prepare": "husky"
   },
   "keywords": [],
