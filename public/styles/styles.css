@@ -1,6 +1,14 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: VT323;
   margin: 0;
+  height: 100%;
+  background-image: url("/images/background.svg");
 }
 
 h1,
@@ -13,40 +21,47 @@ p {
   margin: 0;
 }
 
+.container {
+  height: 90vh;
+  margin: 5vh auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  outline: 5px solid #1d314f;
+  outline-offset: 2px;
+}
+
 .main-header {
   height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  background-color: #4b5556;
+  gap: 15px;
   padding: 7px;
-  box-shadow: inset 0rem 0.8rem rgb(255, 217, 0);
-  border-bottom: 0.8rem solid rgb(255, 217, 0);
-}
-
-.nuclear-icon {
-  opacity: 0.7;
-  filter: invert(99%) sepia(50%) saturate(2149%) hue-rotate(341deg)
-    brightness(99%) contrast(90%);
+  position: relative;
+  bottom: 70px;
 }
 
 .game-title {
-  color: #f1e14f;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-shadow: #ebbf4669 2px 5px;
+  color: #df6837;
+  font-size: 3rem;
   letter-spacing: 2px;
   text-align: center;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .introduction {
-  padding: 16px;
+  padding: 0 16px 16px 16px;
   margin: auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 500px;
   background-color: #4b555657;
+  border: dashed 1px #fff;
+  border-radius: 10px;
 }
