@@ -1,11 +1,11 @@
 import { board } from "../index.js";
-import { generateCoordinates } from "./generateCoordinates.js";
+import { generateRandomPositions } from "./generateRandomPositions.js";
 
 export const setMines = (): void => {
-  const positionY = generateCoordinates();
-  const positionX = generateCoordinates();
+  const yPositions = generateRandomPositions();
+  const xPositions = generateRandomPositions();
 
-  for (let count = 0; count < positionX.length; count++) {
-    board[positionY[count]][positionX[count]].hasMine = true;
+  for (let count = 0; count < xPositions.length; count++) {
+    board[yPositions[count]][xPositions[count]].hasMine = true;
   }
 };
