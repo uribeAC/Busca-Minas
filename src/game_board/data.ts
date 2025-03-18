@@ -8,6 +8,5 @@ export const cell: Cell = {
 };
 
 export const board: Board = {
-  rowsTotal: 3,
-  columnsTotal: 3,
+  grid: [],
 };

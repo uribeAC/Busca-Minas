@@ -5,6 +5,5 @@ export type Cell = {
 };
 
 export type Board = {
-  rowsTotal: number;
-  columnsTotal: number;
+  grid: Cell[][];
 };
