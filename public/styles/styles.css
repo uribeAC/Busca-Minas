@@ -55,11 +55,13 @@ p {
 }
 
 .introduction {
-  padding: 16px;
+  padding: 0 16px 16px 16px;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 500px;
   background-color: #4b555657;
+  border: dashed 1px #fff;
+  border-radius: 10px;
 }
