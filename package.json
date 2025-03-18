@@ -6,7 +6,7 @@
     "start": "serve public",
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "test": "node public/js/analysis/__tests__/",
+    "test": "node public/js/",
     "prepare": "husky"
   },
   "keywords": [],
