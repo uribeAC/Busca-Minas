@@ -1,8 +1,19 @@
 import { generateBoard } from "./board/generateBoard.js";
 import { setMines } from "./board/setMines.js";
-import { generateCoordinates } from "./board/setMines.js";
-import { board } from "./gameBoard/data.js";
+import { generateCoordinates } from "./board/generateCoordinates.js";
 
-generateBoard(8);
-generateCoordinates(8);
-setMines(7);
+export const board = generateBoard(8);
+generateCoordinates();
+setMines();
+
+board.forEach((row) => {
+  const terminalBoard: string[] = [];
+  row.forEach((position) => {
+    if (position.hasMine) {
+      terminalBoard.push("X");
+    } else {
+      terminalBoard.push("O");
+    }
+  });
+  console.log(terminalBoard.join("  "));
+});
