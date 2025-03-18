@@ -1,9 +1,7 @@
 export type Cell = {
   hasMine: boolean;
   adjacentMinesTotal: number;
-  state: "unopened" | "opened";
+  isOpen: boolean;
 };
 
-export type Board = {
-  grid: Cell[][];
-};
+export type Board = Cell[][];

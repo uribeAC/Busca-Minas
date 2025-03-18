@@ -1,11 +1,14 @@
-import { generateBoard } from "./game/index.js";
-import { board } from "./game_board/data.js";
+import { generateBoard } from "./board/generateBoard.js";
+import { setMines } from "./board/setMines.js";
+import { generateCoordinates } from "./board/setMines.js";
+import { board } from "./gameBoard/data.js";
 
-generateBoard(3);
+generateBoard(6);
+generateCoordinates(6);
+setMines(6);
 
-board.grid[0][0].hasMine = true;
-board.grid[1][1].hasMine = true;
-
-console.log(board.grid[0][0].hasMine);
-console.log(board.grid[1][0].hasMine);
-console.log(board.grid[1][1].hasMine);
+for (let positionY = 0; positionY < 5; positionY++) {
+  for (let positionX = 0; positionX < 5; positionX++) {
+    console.log(board[positionY][positionX].hasMine);
+  }
+}
