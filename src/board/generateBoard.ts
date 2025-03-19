@@ -1,10 +1,16 @@
-import { board } from "../gameBoard/data.js";
-import { Cell } from "../gameBoard/type.js";
+import { Board } from "../data/type.js";
+import { Cell } from "../data/type.js";
 
-export const generateBoard = (gridDimensions: number): void => {
-  for (let positionY = 0; positionY < gridDimensions; positionY++) {
+export const generateBoard = (boardDimension: number): Board => {
+  if (boardDimension < 5) {
+    throw new Error("The minimum dimension to generate a board is 5");
+  }
+
+  const board: Board = [];
+
+  for (let positionY = 0; positionY < boardDimension; positionY++) {
     board[positionY] = [];
-    for (let positionX = 0; positionX < gridDimensions; positionX++) {
+    for (let positionX = 0; positionX < boardDimension; positionX++) {
       const newCell: Cell = {
         hasMine: false,
         adjacentMinesTotal: 0,
@@ -12,6 +18,7 @@ export const generateBoard = (gridDimensions: number): void => {
       };
       board[positionY][positionX] = newCell;
     }
-    //console.log(board[positionY].join(" "));
   }
+
+  return board;
 };
