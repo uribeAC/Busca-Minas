@@ -21,6 +21,13 @@ p {
   margin: 0;
 }
 
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .container {
   height: 90vh;
   margin: 5vh auto;
@@ -86,6 +93,27 @@ p {
 .text-intro {
   text-justify: auto;
   font-size: 1.2rem;
+}
+
+.board {
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  justify-self: center;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.cell--bomb {
+  background-color: red;
 }
 
 .main-footer {
