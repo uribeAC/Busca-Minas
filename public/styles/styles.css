@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: VT323;
+  font-family: VT323, "Pixelify Sans", "Micro 5";
   margin: 0;
   height: 100%;
   background-image: url("/images/background.svg");
+  background-position: top center;
 }
 
 h1,
@@ -26,42 +27,63 @@ p {
   margin: 5vh auto;
   width: 80%;
   max-width: 500px;
-  padding: 20px;
+  padding: 0 20px 20px;
   border: 2px solid #fff;
   border-radius: 20px;
   outline: 5px solid #1d314f;
   outline-offset: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-header {
-  height: 5rem;
+  height: fit-content;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+  gap: 10px;
   padding: 7px;
   position: relative;
-  bottom: 70px;
+  top: -37px;
+}
+
+.main-header {
+  background-image: url("/images/background.svg");
+  background-position: top center;
 }
 
 .game-title {
   color: #df6837;
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
-  text-align: center;
+  line-height: 70%;
   font-weight: bold;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+  padding-top: 5px;
 }
 
 .introduction {
-  padding: 0 16px 16px 16px;
-  margin: auto;
+  padding: 5px 10px 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   max-width: 500px;
   background-color: #4b555657;
   border: dashed 1px #fff;
   border-radius: 10px;
+  position: relative;
+  top: -30px;
+}
+
+.title-intro {
+  font-size: 1.4rem;
+}
+
+.text-intro {
+  text-justify: auto;
+  font-size: 1.2rem;
+}
+
+.main-footer {
+  justify-self: flex-end;
+  text-align: center;
 }
