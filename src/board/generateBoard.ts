@@ -11,12 +11,12 @@ export const generateBoard = (boardDimension: number): Board => {
   for (let positionY = 0; positionY < boardDimension; positionY++) {
     board[positionY] = [];
     for (let positionX = 0; positionX < boardDimension; positionX++) {
-      const newCell: Cell = {
+      const cell: Cell = {
         hasMine: false,
         adjacentMinesTotal: 0,
         isOpen: false,
       };
-      board[positionY][positionX] = newCell;
+      board[positionY][positionX] = cell;
     }
   }
 
