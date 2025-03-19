@@ -28,12 +28,21 @@ li {
   list-style: none;
 }
 
-.container {
+li {
+  height: 30px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.root {
   height: 90vh;
   margin: 5vh auto;
   width: 80%;
   max-width: 500px;
-  padding: 0 20px 20px;
+  padding: 16px 20px 20px;
+  gap: 10px;
   border: 2px solid #ffffff;
   border-radius: 20px;
   outline: 5px solid #fc5c21;
@@ -53,7 +62,6 @@ li {
   height: fit-content;
   display: flex;
   gap: 10px;
-  padding: 7px;
 }
 
 .game-title {
@@ -64,7 +72,7 @@ li {
   font-weight: bold;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-  padding-top: 5px;
+  padding-left: 10px;
 }
 
 .mine-icon {
@@ -97,11 +105,14 @@ li {
 
 .board {
   margin: 0;
+  padding: 20px 5px 5px;
   width: fit-content;
   height: fit-content;
+  margin: auto;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto;
-  justify-self: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ffffff3c;
 }
 
 .cell {
@@ -110,10 +121,9 @@ li {
   margin: 0;
   padding: 0;
   border-radius: 0;
-}
-
-.cell--bomb {
-  background-color: red;
+  border: none;
+  background-color: #fc5c21;
+  box-shadow: inset -2px -2px 3px #00000075;
 }
 
 .main-footer {

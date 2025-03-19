@@ -1,4 +1,4 @@
-import { Board } from "../data/type.js";
+import { Board, Cell } from "../data/type.js";
 
 const container = document.querySelector(".board") as HTMLUListElement;
 
@@ -11,17 +11,21 @@ export const renderBoard = (board: Board): void => {
       cellsList.appendChild(listCell);
 
       if (cell.hasMine) {
-        const bombCell = document.createElement("button");
-        bombCell.classList.add("cell");
-        bombCell.classList.add("cell--bomb");
-        bombCell.textContent = "X";
+        const mineCell = document.createElement("button");
+        mineCell.classList.add("cell");
 
-        listCell.appendChild(bombCell);
+        const mineImage = document.createElement("img");
+        mineImage.classList.add("hidden");
+        mineImage.src = "/images/bomb-tile.svg";
+        mineImage.width = 20;
+        mineImage.height = 20;
+
+        listCell.appendChild(mineCell);
+        mineCell.appendChild(mineImage);
         return;
       } else {
         const emptyCell = document.createElement("button");
         emptyCell.classList.add("cell");
-        emptyCell.textContent = "O";
 
         listCell.appendChild(emptyCell);
       }
