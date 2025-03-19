@@ -6,10 +6,11 @@ export const renderBoard = (board: Board): void => {
 
   board.forEach((row) => {
     row.forEach((cell) => {
-      const listCell = document.createElement("li");
-      cellsList.appendChild(listCell);
+      const cellList = document.createElement("li");
+      cellList.classList.add("cell-list");
+      cellsList.appendChild(cellList);
 
-      renderCell(cell, listCell);
+      renderCell(cell, cellList);
 
       return;
     });
