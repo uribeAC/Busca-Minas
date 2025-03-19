@@ -5,6 +5,8 @@ const newCell: Cell = {
   hasMine: false,
   adjacentMinesTotal: 0,
   isOpen: false,
+  positionX: 0,
+  positionY: 0,
 };
 
 describe("Given the generateBoard function", () => {

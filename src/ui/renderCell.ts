@@ -6,7 +6,7 @@ export const renderCell = (cell: Cell, listCell: HTMLLIElement): void => {
 
     return;
   } else {
-    renderEmptyCell(listCell);
+    renderEmptyCell(cell, listCell);
 
     return;
   }
@@ -28,10 +28,12 @@ const renderMineCell = (listCell: HTMLLIElement): void => {
   mineCell.appendChild(mineImage);
 };
 
-const renderEmptyCell = (listCell: HTMLLIElement): void => {
+const renderEmptyCell = (cell: Cell, listCell: HTMLLIElement): void => {
   const emptyCell = document.createElement("button");
   emptyCell.classList.add("cell");
   emptyCell.ariaLabel = "Open cell";
+
+  emptyCell.textContent = `${cell.adjacentMinesTotal}`;
 
   listCell.appendChild(emptyCell);
 };

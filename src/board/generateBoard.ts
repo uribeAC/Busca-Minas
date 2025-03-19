@@ -1,5 +1,6 @@
 import { Board } from "../data/type.js";
 import { Cell } from "../data/type.js";
+import { getAdjacentMines } from "./getAdjacentMines.js";
 
 export const generateBoard = (boardDimension: number): Board => {
   if (boardDimension < 5) {
@@ -15,7 +16,10 @@ export const generateBoard = (boardDimension: number): Board => {
         hasMine: false,
         adjacentMinesTotal: 0,
         isOpen: false,
+        positionY: positionY,
+        positionX: positionX,
       };
+
       board[positionY][positionX] = cell;
     }
   }
