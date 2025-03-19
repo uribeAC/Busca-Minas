@@ -7,8 +7,7 @@
 body {
   font-family: VT323, "Pixelify Sans", "Micro 5";
   margin: 0;
-  height: 100%;
-  background-image: url("/images/background.svg");
+  background-image: url("/images/pixel-background.svg");
   background-position: top center;
 }
 
@@ -28,12 +27,19 @@ p {
   width: 80%;
   max-width: 500px;
   padding: 0 20px 20px;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
   border-radius: 20px;
-  outline: 5px solid #1d314f;
+  outline: 5px solid #fc5c21;
   outline-offset: 2px;
+  background-image: url("/images/main-background.svg");
+  box-shadow: 0 0 2rem #fc5b2187;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.container::after {
+  filter: blur(3rem);
 }
 
 .main-header {
@@ -41,17 +47,10 @@ p {
   display: flex;
   gap: 10px;
   padding: 7px;
-  position: relative;
-  top: -37px;
-}
-
-.main-header {
-  background-image: url("/images/background.svg");
-  background-position: top center;
 }
 
 .game-title {
-  color: #df6837;
+  color: #fc5c21;
   font-size: 2.5rem;
   letter-spacing: 2px;
   line-height: 70%;
@@ -59,6 +58,13 @@ p {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   padding-top: 5px;
+}
+
+.mine-icon {
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  scale: 2;
 }
 
 .introduction {
@@ -70,8 +76,7 @@ p {
   background-color: #4b555657;
   border: dashed 1px #fff;
   border-radius: 10px;
-  position: relative;
-  top: -30px;
+  color: #fff;
 }
 
 .title-intro {
@@ -86,4 +91,5 @@ p {
 .main-footer {
   justify-self: flex-end;
   text-align: center;
+  color: #fff;
 }
