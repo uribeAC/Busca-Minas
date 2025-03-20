@@ -1,11 +1,14 @@
 import { Cell } from "../data/type.js";
 import { Board } from "../data/type.js";
 
-export const getAdjacentMines = (cell: Cell, board: Board): number => {
+export const getAdjacentCellsPositions = (
+  cell: Cell,
+  board: Board
+): number[][] => {
   const positionY = cell.positionY;
   const positionX = cell.positionX;
 
-  const adjacentCells = [
+  const adjacentPositions = [
     [-1, -1],
     [-1, 0],
     [-1, 1],
@@ -16,24 +19,38 @@ export const getAdjacentMines = (cell: Cell, board: Board): number => {
     [1, 1],
   ];
 
+  adjacentPositions.forEach((position) => {
+    position[0] += positionY;
+    position[1] += positionX;
+  });
+
+  const adjacentBoardPositions: number[][] = [];
+
+  adjacentPositions.forEach((position) => {
+    if (
+      position[0] >= 0 &&
+      position[0] < board.length &&
+      position[1] >= 0 &&
+      position[1] < board.length
+    ) {
+      adjacentBoardPositions.push(position);
+    }
+  });
+
+  return adjacentBoardPositions;
+};
+
+export const getAdjacentMines = (cell: Cell, board: Board): number => {
+  const adjacentCells = getAdjacentCellsPositions(cell, board);
+
   let adjacentMines = 0;
 
   adjacentCells.forEach((position) => {
-    const adjacentCellPositionY = position[0] + positionY;
-    const adjacentCellPositionX = position[1] + positionX;
+    const adjacentCellPositionY = position[0];
+    const adjacentCellPositionX = position[1];
 
-    const clausulaGuarda =
-      adjacentCellPositionX >= 0 &&
-      adjacentCellPositionX < board.length &&
-      adjacentCellPositionY >= 0 &&
-      adjacentCellPositionY < board.length;
-
-    if (clausulaGuarda) {
-      console.log(board[adjacentCellPositionY][adjacentCellPositionX]);
-      if (board[adjacentCellPositionY][adjacentCellPositionX].hasMine) {
-        adjacentMines++;
-        console.log("YES");
-      }
+    if (board[adjacentCellPositionY][adjacentCellPositionX].hasMine) {
+      adjacentMines++;
     }
   });
 
