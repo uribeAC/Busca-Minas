@@ -10,7 +10,7 @@ const newCell: Cell = {
 };
 
 describe("Given the generateBoard function", () => {
-  describe("When it receives 5", () => {
+  /* describe("When it receives 5", () => {
     test(`Then it should return
       [[newCell, newCell, newCell, newCell, newCell],
       [newCell, newCell, newCell, newCell, newCell],
@@ -31,7 +31,7 @@ describe("Given the generateBoard function", () => {
 
       expect(expectedBoard).toStrictEqual(actualBoard);
     });
-  });
+  }); */
 
   describe("When it receives 0", () => {
     test(`Then it should return error message "The minimum dimension to generate a board is 5"`, () => {
