@@ -1,6 +1,6 @@
 import { Board } from "../data/type.js";
 import { Cell } from "../data/type.js";
-import { getAdjacentMines } from "./getAdjacentMines.js";
+import { getAdjacentMinesTotal } from "./getAdjacentMines.js";
 
 export const generateBoard = (boardDimension: number): Board => {
   if (boardDimension < 5) {

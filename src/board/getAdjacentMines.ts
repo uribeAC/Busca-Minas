@@ -40,8 +40,14 @@ export const getAdjacentCellsPositions = (
   return adjacentBoardPositions;
 };
 
-export const getAdjacentMines = (cell: Cell, board: Board): number => {
-  const adjacentCells = getAdjacentCellsPositions(cell, board);
+export const getAdjacentMinesTotal = (
+  cell: Cell,
+  board: Board,
+  adjacentCells?: number[][]
+): number => {
+  if (!adjacentCells) {
+    adjacentCells = getAdjacentCellsPositions(cell, board);
+  }
 
   let adjacentMines = 0;
 

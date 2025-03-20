@@ -1,6 +1,6 @@
 import { board } from "../index.js";
 import { generateRandomPositions } from "./generateRandomPositions.js";
-import { getAdjacentMines } from "./getAdjacentMines.js";
+import { getAdjacentMinesTotal } from "./getAdjacentMines.js";
 
 export const setMines = (): void => {
   const yPositions = generateRandomPositions();
@@ -12,7 +12,7 @@ export const setMines = (): void => {
 
   board.forEach((row) => {
     row.forEach((cell) => {
-      cell.adjacentMinesTotal = getAdjacentMines(cell, board);
+      cell.adjacentMinesTotal = getAdjacentMinesTotal(cell, board);
     });
   });
 };
