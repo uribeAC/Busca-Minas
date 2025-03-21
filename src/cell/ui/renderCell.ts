@@ -1,4 +1,4 @@
-import { Cell } from "../data/type.js";
+import { Cell } from "../data/type";
 
 export const renderCell = (cell: Cell, listCell: HTMLLIElement): void => {
   if (cell.hasMine) {

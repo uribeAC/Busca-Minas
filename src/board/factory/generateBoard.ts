@@ -1,5 +1,6 @@
 import { Board } from "../data/type.js";
-import { Cell } from "../data/type.js";
+import { Cell } from "../../cell/data/type.js";
+import { generateCell } from "../../cell/factory/generateCell.js";
 
 export const generateBoard = (boardDimension: number): Board => {
   if (boardDimension < 5) {
@@ -11,13 +12,10 @@ export const generateBoard = (boardDimension: number): Board => {
   for (let positionY = 0; positionY < boardDimension; positionY++) {
     board[positionY] = [];
     for (let positionX = 0; positionX < boardDimension; positionX++) {
-      const cell: Cell = {
-        hasMine: false,
-        adjacentMinesTotal: 0,
-        isOpen: false,
-        positionY: positionY,
-        positionX: positionX,
-      };
+      const cell = generateCell();
+
+      cell.positionX = positionX;
+      cell.positionY = positionY;
 
       board[positionY][positionX] = cell;
     }

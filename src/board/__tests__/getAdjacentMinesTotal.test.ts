@@ -1,5 +1,5 @@
 import { getAdjacentMinesTotal } from "../getAdjacentMines";
-import { generateBoard } from "../generateBoard";
+import { generateBoard } from "../factory/generateBoard";
 
 describe("Given the getAdjacentMinesTotal function", () => {
   describe("When it receives the cell A1 and there is a mine in A2 but none in B1 and B2", () => {

@@ -1,5 +1,5 @@
 import { getRandomPositions } from "../getRandomPositions";
-import { generateBoard } from "../generateBoard";
+import { generateBoard } from "../factory/generateBoard";
 
 describe("Given the getRandomPositions function", () => {
   describe("When it receives a 8x8 board", () => {

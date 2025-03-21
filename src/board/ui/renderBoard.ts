@@ -1,5 +1,6 @@
-import { Board, Cell } from "../data/type.js";
-import { renderCell } from "./renderCell.js";
+import { Board } from "../data/type.js";
+import { Cell } from "../../cell/data/type.js";
+import { renderCell } from "../../cell/ui/renderCell.js";
 
 export const renderBoard = (board: Board): void => {
   const cellsList = document.querySelector(".board")!;
