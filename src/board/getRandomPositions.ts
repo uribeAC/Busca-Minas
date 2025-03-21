@@ -1,5 +1,4 @@
 import { Board } from "../data/type.js";
-import { board } from "../index.js";
 
 export const getRandomPositions = (board: Board): number[] => {
   const boardDimension = board.length;
