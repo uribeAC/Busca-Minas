@@ -1,4 +1,4 @@
-import { Board } from "../data/type.js";
+import { Board } from "./data/type.js";
 import { getRandomPositions } from "./getRandomPositions.js";
 
 export const generateBoardWithMines = (board: Board): Board => {

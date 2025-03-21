@@ -1,5 +1,5 @@
-import { Cell } from "../data/type.js";
-import { Board } from "../data/type.js";
+import { Cell } from "../cell/data/type.js";
+import { Board } from "./data/type.js";
 
 export const getAdjacentCellsPositions = (
   cell: Cell,

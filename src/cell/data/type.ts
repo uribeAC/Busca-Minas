@@ -5,5 +5,3 @@ export type Cell = {
   positionY: number;
   positionX: number;
 };
-
-export type Board = Cell[][];

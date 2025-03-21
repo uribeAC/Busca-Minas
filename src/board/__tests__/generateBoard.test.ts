@@ -1,13 +1,4 @@
-import { generateBoard } from "../generateBoard";
-import { Cell } from "../../data/type";
-
-const newCell: Cell = {
-  hasMine: false,
-  adjacentMinesTotal: 0,
-  isOpen: false,
-  positionX: 0,
-  positionY: 0,
-};
+import { generateBoard } from "../factory/generateBoard";
 
 describe("Given the generateBoard function", () => {
   describe("When it receives 5", () => {

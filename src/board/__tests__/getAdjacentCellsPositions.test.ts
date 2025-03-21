@@ -1,5 +1,5 @@
 import { getAdjacentCellsPositions } from "../getAdjacentMines";
-import { generateBoard } from "../generateBoard";
+import { generateBoard } from "../factory/generateBoard";
 
 describe("Given the getAdjacentCellsPositions function", () => {
   describe("When it receives the cell A1 (Letters for rows and Numbers for columns)", () => {

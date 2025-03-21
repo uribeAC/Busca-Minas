@@ -1,4 +1,4 @@
-import { Board } from "../data/type.js";
+import { Board } from "./data/type.js";
 import { getAdjacentMinesTotal } from "./getAdjacentMines.js";
 
 export const generateCompleteBoard = (board: Board): Board => {
