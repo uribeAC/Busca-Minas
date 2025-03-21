@@ -1,6 +1,6 @@
-import { board } from "../index.js";
+import { Board } from "../data/type.js";
 
-export const generateRandomPositions = (): number[] => {
+export const getRandomPositions = (board: Board): number[] => {
   const boardDimension = board.length;
 
   const minesTotal = Math.floor(boardDimension * boardDimension * 0.15);
