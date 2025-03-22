@@ -1,19 +1,32 @@
 import { Board } from "../data/type.js";
-import { Cell } from "../../cell/data/type.js";
-import { renderCell } from "../../cell/ui/renderCell.js";
+import { renderCellElement } from "../../cell/ui/renderCell.js";
 
-export const renderBoard = (board: Board): void => {
-  const cellsList = document.querySelector(".board")!;
+export const createBoardElement = (board: Board): HTMLElement => {
+  const boardElement = document.createElement("ul");
+  boardElement.classList.add("board");
 
-  board.forEach((row) => {
-    row.forEach((cell) => {
-      const cellList = document.createElement("li");
-      cellList.classList.add("cell-list");
-      cellsList.appendChild(cellList);
+  const cells = board.flat();
+  cells.forEach((cell) => {
+    const cellContainer = document.createElement("li");
+    cellContainer.classList.add("cell-container");
+    boardElement.appendChild(cellContainer);
 
-      renderCell(cell, cellList);
-
-      return;
-    });
+    const cellElement = renderCellElement(cell);
+    cellContainer.appendChild(cellElement);
   });
+
+  return boardElement;
+};
+
+export const renderBoard = (
+  boardElement: HTMLElement,
+  container: HTMLElement,
+  elementReference?: HTMLElement
+): void => {
+  if (!elementReference) {
+    container.appendChild(boardElement);
+    return;
+  }
+
+  container.insertBefore(boardElement, elementReference);
 };
