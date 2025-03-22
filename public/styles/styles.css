@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+ --board: 8
+ --cell-dimension: 25px
+}
+
 body {
   font-family: VT323, "Pixelify Sans", "Micro 5";
   margin: 0;
@@ -125,6 +130,23 @@ li {
   border: none;
   background-color: #fc5c21;
   box-shadow: inset -2px -2px 3px #00000075;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    background-color: #ff7d4e;
+    scale: 1.2;
+    border-radius: 3px;
+  }
+}
+
+.mine {
+  max-width: 100%;
+  width: 70%;
 }
 
 .main-footer {

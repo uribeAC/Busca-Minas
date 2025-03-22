@@ -11,7 +11,7 @@ export const renderCellElement = (cell: Cell): HTMLElement => {
 
     if (cell.hasMine) {
       cellElement.innerHTML = `
-    <img src="/images/bomb-tile.svg" alt="Mine" width="20" height="20"/>`;
+    <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
       return;
     }
 
