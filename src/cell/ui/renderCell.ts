@@ -10,11 +10,13 @@ export const renderCellElement = (cell: Cell): HTMLElement => {
     cell.isOpen = true;
 
     if (cell.hasMine) {
+      cellElement.classList.add("cell--mine");
       cellElement.innerHTML = `
     <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
       return;
     }
 
+    cellElement.classList.add("cell--opened");
     cellElement.textContent = getAdjacentMinesTotal(
       cell,
       completeBoard
