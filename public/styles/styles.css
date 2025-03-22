@@ -114,7 +114,7 @@ li {
   display: grid;
   grid-template-columns: repeat(var(--board), 1fr);
   grid-template-rows: repeat(var(--board), 1fr);
-  background-color: #fff;
+  background-color: #ffd5c6;
   box-shadow: 0 0 10px #ffffff3c;
 }
 
@@ -146,9 +146,20 @@ li {
   }
 }
 
+.cell--mine {
+  background-color: #3a3383;
+  box-shadow: inset 0px 0px 0px;
+}
+
 .mine {
   max-width: 100%;
   width: 70%;
+}
+
+.cell--opened {
+  background-color: #ffd5c6;
+  border: 1px solid #645fa1;
+  box-shadow: inset 0px 0px 0px;
 }
 
 .main-footer {
