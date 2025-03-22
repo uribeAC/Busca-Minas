@@ -14,6 +14,6 @@ export const gameOver = () => {
 
   const gameOverMessage = document.createElement("span");
   gameOverMessage.classList.add("game-over-message");
-  gameOverMessage.textContent = "GAME OVER";
+  gameOverMessage.textContent = "Game Over";
   containerElement.appendChild(gameOverMessage);
 };
