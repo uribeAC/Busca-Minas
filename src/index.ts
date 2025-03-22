@@ -17,7 +17,7 @@ if (!container) {
   throw new Error("Missinng HTML Element");
 }
 
-const containerElement = container as HTMLElement;
+export const containerElement = container as HTMLElement;
 
 const boardElement = createBoardElement(completeBoard);
 renderBoard(boardElement, containerElement);

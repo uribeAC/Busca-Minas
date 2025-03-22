@@ -131,6 +131,7 @@ li {
 }
 
 .game__window {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 4px 8px 8px;
@@ -204,6 +205,33 @@ li {
   background-color: #ffd5c6;
   border: 1px solid #645fa1;
   box-shadow: inset 0px 0px 0px;
+}
+
+.game-over-message {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  padding: 20px;
+  background-color: #3a3383cb;
+  border: 2px dashed #fff;
+  color: #fff;
+  animation-duration: 2s;
+  animation-name: game-over;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  scale: 0;
+}
+
+@keyframes game-over {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
 }
 
 .main-footer {
