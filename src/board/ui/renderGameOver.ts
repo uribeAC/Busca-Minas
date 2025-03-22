@@ -1,21 +1,19 @@
-import { Board } from "../data/type.js";
+import { containerElement } from "../../index.js";
 
-const gameOver = (board: Board) => {
-  const cells = board.flat();
-
-  cells.forEach((cell) => {
-    if (cell.hasMine && cell.isOpen) {
-      console.log("game over");
-    }
-  });
-};
-
-export const renderGameOver = (board: Board) => {
+export const gameOver = () => {
   const cells = document.querySelectorAll(".cell");
-
   cells.forEach((cell) => {
-    cell.addEventListener("click", () => {
-      gameOver(board);
-    });
+    cell.setAttribute("disabled", "");
   });
+
+  const cellsElements = document.querySelectorAll(".game-over");
+  cellsElements.forEach((cellElement) => {
+    cellElement.innerHTML = `
+      <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
+  });
+
+  const gameOverMessage = document.createElement("span");
+  gameOverMessage.classList.add("game-over-message");
+  gameOverMessage.textContent = "Game Over";
+  containerElement.appendChild(gameOverMessage);
 };

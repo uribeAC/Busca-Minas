@@ -6,6 +6,7 @@ export const createBoardElement = (board: Board): HTMLElement => {
   boardElement.classList.add("board");
 
   const cells = board.flat();
+
   cells.forEach((cell) => {
     const cellContainer = document.createElement("li");
     cellContainer.classList.add("cell-container");
