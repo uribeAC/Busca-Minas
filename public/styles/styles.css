@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --board: 8;
+  --cell-size: 25px;
+}
+
 body {
   font-family: VT323, "Pixelify Sans", "Micro 5";
   margin: 0;
@@ -101,30 +106,47 @@ li {
 
 .board {
   margin: 0;
-  padding: 20px 5px 5px;
-  width: fit-content;
-  height: fit-content;
+  width: calc(var(--board) * var(--cell-size));
+  height: calc(var(--board) * var(--cell-size));
   margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(var(--board), 1fr);
+  grid-template-rows: repeat(var(--board), 1fr);
   background-color: #fff;
   box-shadow: 0 0 10px #ffffff3c;
 }
 
 .cell-container {
-  height: 25px;
-  width: 25px;
+  height: var(--cell-size);
+  width: var(--cell-size);
 }
 
 .cell {
-  width: 25px;
-  height: 25px;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   border-radius: 0;
   border: none;
   background-color: #fc5c21;
   box-shadow: inset -2px -2px 3px #00000075;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    background-color: #ff7d4e;
+    scale: 1.2;
+    border-radius: 3px;
+  }
+}
+
+.mine {
+  max-width: 100%;
+  width: 70%;
 }
 
 .main-footer {
