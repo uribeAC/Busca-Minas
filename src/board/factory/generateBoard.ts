@@ -7,10 +7,15 @@ export const generateBoard = (boardDimension: number): Board => {
     throw new Error("The minimum dimension to generate a board is 5");
   }
 
+  if (!Number.isInteger(boardDimension)) {
+    throw new Error("Only integrer numbers are valid for board dimension");
+  }
+
   const board: Board = [];
 
   for (let positionY = 0; positionY < boardDimension; positionY++) {
     board[positionY] = [];
+
     for (let positionX = 0; positionX < boardDimension; positionX++) {
       const cell = generateCell();
 
