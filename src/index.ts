@@ -23,10 +23,4 @@ export const containerElement = container as HTMLElement;
 const boardElement = createBoardElement(completeBoard);
 renderBoard(boardElement, containerElement);
 
-const cells = document.querySelectorAll(".cell");
-
-cells.forEach((cell) =>
-  cell.addEventListener("click", () => {
-    renderVictory();
-  })
-);
+renderVictory();

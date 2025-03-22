@@ -1,6 +1,7 @@
 import { completeBoard } from "../../index.js";
+import { containerElement } from "../../index.js";
 
-export const renderVictory = () => {
+const createVictory = () => {
   const cells = completeBoard.flat();
 
   const emptyCells = cells.filter((cell) => cell.hasMine === false);
@@ -8,18 +9,24 @@ export const renderVictory = () => {
   const victory = emptyCells.every((cell) => cell.isOpen);
 
   if (victory) {
-    console.log("victory");
+    const cellsElements = document.querySelectorAll(".cell");
+    cellsElements.forEach((cell) => {
+      cell.setAttribute("disabled", "");
+    });
+
+    const victoryMessage = document.createElement("span");
+    victoryMessage.classList.add("victory-message");
+    victoryMessage.textContent = "Victory!";
+    containerElement.appendChild(victoryMessage);
   }
-  /* const cellsElements = document.querySelectorAll(".cell");
-  cellsElements.forEach((cell) => {
-    cell.setAttribute("disabled", "");
-  }); */
 };
 
-const cells = document.querySelectorAll(".cell");
+export const renderVictory = () => {
+  const cells = document.querySelectorAll(".cell");
 
-cells.forEach((cell) =>
-  cell.addEventListener("click", () => {
-    renderVictory;
-  })
-);
+  cells.forEach((cell) =>
+    cell.addEventListener("click", () => {
+      createVictory();
+    })
+  );
+};

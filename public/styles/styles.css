@@ -209,6 +209,7 @@ li {
 
 .game-over-message {
   position: absolute;
+  top: 30px;
   left: 0;
   right: 0;
   margin-inline: auto;
@@ -217,8 +218,8 @@ li {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 20px;
-  background-color: #3a3383cb;
-  border: 2px dashed #fff;
+  background-color: #3a3383;
+  box-shadow: 7px 7px 7px #000;
   color: #fff;
   animation-duration: 2s;
   animation-name: game-over;
@@ -236,6 +237,45 @@ li {
 }
 
 @keyframes game-over {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+.victory-message {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px;
+  background-color: #fc5b21;
+  box-shadow: 7px 7px 7px #000;
+  color: #fff;
+  animation-duration: 2s;
+  animation-name: victory;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  scale: 0;
+
+  @media (width < 430px) {
+    font-size: 2rem;
+  }
+
+  @media (width < 350px) {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes victory {
   from {
     scale: 0;
   }
