@@ -6,7 +6,8 @@
 
 :root {
   --board: 8;
-  --cell-size: 25px;
+  --cell-size: 7vw;
+  --max-cell-size: 30px;
 }
 
 body {
@@ -99,11 +100,19 @@ li {
 
 .title-intro {
   font-size: 1.4rem;
+
+  @media (width < 350px) {
+    font-size: 1.2rem;
+  }
 }
 
 .text-intro {
   text-justify: auto;
   font-size: 1.2rem;
+
+  @media (width < 350px) {
+    font-size: 1rem;
+  }
 }
 
 .game {
@@ -141,6 +150,8 @@ li {
 .board {
   width: calc(var(--board) * var(--cell-size));
   height: calc(var(--board) * var(--cell-size));
+  max-width: calc(var(--max-cell-size) * var(--board));
+  max-height: calc(var(--max-cell-size) * var(--board));
   display: grid;
   grid-template-columns: repeat(var(--board), 1fr);
   grid-template-rows: repeat(var(--board), 1fr);
@@ -152,6 +163,8 @@ li {
 .cell-container {
   height: var(--cell-size);
   width: var(--cell-size);
+  max-width: var(--max-cell-size);
+  max-height: var(--max-cell-size);
 }
 
 .cell {
