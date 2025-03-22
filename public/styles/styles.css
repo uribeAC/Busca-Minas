@@ -209,9 +209,12 @@ li {
 
 .game-over-message {
   position: absolute;
-  top: 20%;
-  right: 10%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
   font-size: 2.5rem;
+  text-transform: uppercase;
   letter-spacing: 2px;
   padding: 20px;
   background-color: #3a3383cb;
@@ -222,6 +225,14 @@ li {
   animation-delay: 0.4s;
   animation-fill-mode: forwards;
   scale: 0;
+
+  @media (width < 430px) {
+    font-size: 2rem;
+  }
+
+  @media (width < 350px) {
+    font-size: 1.5rem;
+  }
 }
 
 @keyframes game-over {
