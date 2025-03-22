@@ -106,16 +106,47 @@ li {
   font-size: 1.2rem;
 }
 
+.game {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.game__title {
+  background-color: #fc5c21;
+  outline: 2px solid #fc5c21;
+  font-size: 1rem;
+  font-weight: 0;
+  padding: 4px;
+  color: #242424;
+}
+
+.game__window {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 8px;
+  background-color: #8d8aad;
+  border: 3px solid #645fa1;
+  outline: 2px solid #fc5c21;
+  gap: 10px;
+}
+
+.total-mines {
+  height: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  align-self: center;
+}
+
 .board {
-  margin: 0;
   width: calc(var(--board) * var(--cell-size));
   height: calc(var(--board) * var(--cell-size));
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(var(--board), 1fr);
   grid-template-rows: repeat(var(--board), 1fr);
   background-color: #ffd5c6;
   box-shadow: 0 0 10px #ffffff3c;
+  outline: 4px solid #5b5691;
 }
 
 .cell-container {
