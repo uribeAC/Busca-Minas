@@ -1,12 +1,8 @@
 import { generateBoard } from "./board/factory/generateBoard.js";
 import { generateBoardWithMines } from "./board/generateBoardWithMines.js";
 import { generateCompleteBoard } from "./board/generateCompleteBoard.js";
-import {
-  getAdjacentCellsPositions,
-  getAdjacentMinesTotal,
-} from "./board/getAdjacentMines.js";
 import { getRandomPositions } from "./board/getRandomPositions.js";
-import { renderBoard } from "./board/ui/renderBoard.js";
+import { createBoardElement, renderBoard } from "./board/ui/renderBoard.js";
 
 export const board = generateBoard(8);
 
@@ -15,4 +11,15 @@ export const minesBoard = generateBoardWithMines(board);
 
 export const completeBoard = generateCompleteBoard(minesBoard);
 
-renderBoard(completeBoard);
+const container = document.querySelector(".root");
+const reference = document.querySelector(".main-footer");
+
+if (!container || !reference) {
+  throw new Error("Missinng HTML Element");
+}
+
+const containerElement = container as HTMLElement;
+const referenceElement = reference as HTMLElement;
+
+const boardElement = createBoardElement(completeBoard);
+renderBoard(boardElement, containerElement, referenceElement);

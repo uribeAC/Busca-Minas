@@ -1,39 +1,25 @@
-import { Cell } from "../data/type";
+import { getAdjacentMinesTotal } from "../../board/getAdjacentMines.js";
+import { completeBoard } from "../../index.js";
+import { Cell } from "../data/type.js";
 
-export const renderCell = (cell: Cell, listCell: HTMLLIElement): void => {
-  if (cell.hasMine) {
-    renderMineCell(listCell);
+export const renderCellElement = (cell: Cell): HTMLElement => {
+  const cellElement = document.createElement("button");
+  cellElement.classList.add("cell");
+  cellElement.ariaLabel = "Open cell";
+  cellElement.addEventListener("click", () => {
+    cell.isOpen = true;
 
-    return;
-  } else {
-    renderEmptyCell(cell, listCell);
+    if (cell.hasMine) {
+      cellElement.innerHTML = `
+    <img src="/images/bomb-tile.svg" alt="Mine" width="20" height="20"/>`;
+      return;
+    }
 
-    return;
-  }
-};
+    cellElement.textContent = getAdjacentMinesTotal(
+      cell,
+      completeBoard
+    ).toString();
+  });
 
-const renderMineCell = (listCell: HTMLLIElement): void => {
-  const mineCell = document.createElement("button");
-  mineCell.classList.add("cell");
-  mineCell.ariaLabel = "Open cell";
-
-  const mineImage = document.createElement("img");
-  mineImage.classList.add("hidden");
-  mineImage.src = "/images/bomb-tile.svg";
-  mineImage.width = 20;
-  mineImage.height = 20;
-  mineImage.alt = "Pixel art mine";
-
-  listCell.appendChild(mineCell);
-  mineCell.appendChild(mineImage);
-};
-
-const renderEmptyCell = (cell: Cell, listCell: HTMLLIElement): void => {
-  const emptyCell = document.createElement("button");
-  emptyCell.classList.add("cell");
-  emptyCell.ariaLabel = "Open cell";
-
-  emptyCell.textContent = `${cell.adjacentMinesTotal}`;
-
-  listCell.appendChild(emptyCell);
+  return cellElement;
 };
