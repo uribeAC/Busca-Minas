@@ -57,4 +57,15 @@ describe("Given the generateBoard function", () => {
       expect(() => generateBoard(boardDimension)).toThrow(expectedErrorMessage);
     });
   });
+
+  describe("When it receives 5.9", () => {
+    test(`Then it should return error message "Only integrer numbers are valid for board dimension"`, () => {
+      const boardDimension = 5.9;
+
+      const expectedErrorMessage =
+        "Only integrer numbers are valid for board dimension";
+
+      expect(() => generateBoard(boardDimension)).toThrow(expectedErrorMessage);
+    });
+  });
 });
