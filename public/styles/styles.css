@@ -35,8 +35,9 @@ li {
   list-style: none;
 }
 
-.hidden {
-  display: none !important;
+button {
+  padding: 0;
+  margin: 0;
 }
 
 .root {
@@ -100,6 +101,7 @@ li {
 
 .title-intro {
   font-size: 1.4rem;
+  letter-spacing: 1.5px;
 
   @media (width < 350px) {
     font-size: 1.2rem;
@@ -126,6 +128,7 @@ li {
   outline: 2px solid #fc5c21;
   font-size: 1rem;
   font-weight: 0;
+  letter-spacing: 0.7px;
   padding: 4px;
   color: #242424;
 }
@@ -188,6 +191,10 @@ li {
     background-color: #ff7d4e;
     scale: 1.2;
     border-radius: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.85;
   }
 }
 
@@ -258,8 +265,8 @@ li {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 20px;
-  background-color: #fd7543;
-  border: 3px solid #cc400e;
+  background-color: #fc5d23;
+  border: 3px solid #be3909;
   box-shadow: 7px 7px 7px #000000d2;
   color: #fff;
   animation-duration: 2s;
@@ -294,13 +301,13 @@ li {
   right: 0;
   margin-inline: auto;
   width: fit-content;
-  font-size: 1.8rem;
+  text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 5px;
-  background-color: #fd7543;
-  border: 2px solid #cc400e;
+  padding: 4px 8px;
+  background-color: #fff;
+  border: 2px solid #000;
   box-shadow: 7px 7px 7px #000000d2;
-  color: #fff;
+  color: #000;
   animation-duration: 1s;
   animation-name: new-game;
   animation-delay: 1s;
@@ -310,22 +317,29 @@ li {
   cursor: pointer;
 
   &:hover {
-    color: #000;
+    background-color: #ffaa8b;
+  }
+
+  @media (width >= 430px) {
+    font-size: 1.6rem;
   }
 
   @media (width < 430px) {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
     top: 90px;
   }
 
   @media (width < 350px) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
   }
 }
 
 .new-game--victory {
-  background-color: #4c4888;
-  border: 2px solid #262062;
+  &:hover {
+    background-color: #9593c9;
+  }
 }
 
 @keyframes new-game {

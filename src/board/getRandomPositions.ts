@@ -10,6 +10,6 @@ export const getRandomPositions = (board: Board): number[] => {
   for (let position = 0; position <= minesTotal; position++) {
     xyPositions.push(Math.floor(Math.random() * boardDimension));
   }
-  //xyPositions;
-  return [0, 0];
+
+  return xyPositions;
 };
