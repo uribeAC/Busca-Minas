@@ -218,8 +218,9 @@ li {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 20px;
-  background-color: #3a3383;
-  box-shadow: 7px 7px 7px #000;
+  background-color: #4c4888;
+  border: 3px solid #262062;
+  box-shadow: 7px 7px 7px #000000d2;
   color: #fff;
   animation-duration: 2s;
   animation-name: game-over;
@@ -257,8 +258,9 @@ li {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 20px;
-  background-color: #fc5b21;
-  box-shadow: 7px 7px 7px #000;
+  background-color: #fd7543;
+  border: 3px solid #cc400e;
+  box-shadow: 7px 7px 7px #000000d2;
   color: #fff;
   animation-duration: 2s;
   animation-name: victory;
@@ -281,6 +283,61 @@ li {
   }
 
   to {
+    scale: 1;
+  }
+}
+
+.new-game {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  padding: 5px;
+  background-color: #fd7543;
+  border: 2px solid #cc400e;
+  box-shadow: 7px 7px 7px #000000d2;
+  color: #fff;
+  animation-duration: 1s;
+  animation-name: new-game;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  scale: 0;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+
+  @media (width < 430px) {
+    font-size: 1.3rem;
+    top: 90px;
+  }
+
+  @media (width < 350px) {
+    font-size: 1.1rem;
+  }
+}
+
+.new-game--victory {
+  background-color: #4c4888;
+  border: 2px solid #262062;
+}
+
+@keyframes new-game {
+  0% {
+    scale: 0.7;
+  }
+
+  50% {
+    scale: 1.2;
+  }
+
+  100% {
     scale: 1;
   }
 }

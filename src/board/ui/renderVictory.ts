@@ -1,5 +1,6 @@
 import { completeBoard } from "../../index.js";
 import { containerElement } from "../../index.js";
+import { renderNewGame } from "./renderNewGame.js";
 
 const createVictory = () => {
   const cells = completeBoard.flat();
@@ -18,6 +19,8 @@ const createVictory = () => {
     victoryMessage.classList.add("victory-message");
     victoryMessage.textContent = "Victory!";
     containerElement.appendChild(victoryMessage);
+
+    renderNewGame(true);
   }
 };
 
