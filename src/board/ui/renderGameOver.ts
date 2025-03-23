@@ -1,10 +1,11 @@
 import { containerElement } from "../../index.js";
 import { renderNewGame } from "./renderNewGame.js";
 
-export const gameOver = () => {
-  const cells = document.querySelectorAll(".cell");
-  cells.forEach((cell) => {
-    cell.setAttribute("disabled", "");
+export const renderGameOver = () => {
+  const cellsButtonsElements = document.querySelectorAll(".cell");
+  cellsButtonsElements.forEach((cell) => {
+    const cellButtonElement = cell as HTMLButtonElement;
+    cellButtonElement.disabled = true;
   });
 
   const cellsElements = document.querySelectorAll(".game-over");

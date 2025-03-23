@@ -51,7 +51,7 @@ button {
   border-radius: 20px;
   outline: 5px solid #fc5c21;
   outline-offset: 2px;
-  background-image: url("/images/main-background.svg");
+  background-image: url("/images/main-background.webp");
   background-color: #3a3383;
   box-shadow: 0 0 2rem #fc5b2187;
   display: flex;

@@ -10,9 +10,10 @@ const createVictory = () => {
   const victory = emptyCells.every((cell) => cell.isOpen);
 
   if (victory) {
-    const cellsElements = document.querySelectorAll(".cell");
-    cellsElements.forEach((cell) => {
-      cell.setAttribute("disabled", "");
+    const cellsButtonsElements = document.querySelectorAll(".cell");
+    cellsButtonsElements.forEach((cell) => {
+      const cellButtonElement = cell as HTMLButtonElement;
+      cellButtonElement.disabled = true;
     });
 
     const victoryMessage = document.createElement("span");
