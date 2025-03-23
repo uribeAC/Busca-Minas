@@ -1,4 +1,5 @@
 import { containerElement } from "../../index.js";
+import { renderNewGame } from "./renderNewGame.js";
 
 export const gameOver = () => {
   const cells = document.querySelectorAll(".cell");
@@ -16,4 +17,6 @@ export const gameOver = () => {
   gameOverMessage.classList.add("game-over-message");
   gameOverMessage.textContent = "Game Over";
   containerElement.appendChild(gameOverMessage);
+
+  renderNewGame(false);
 };
