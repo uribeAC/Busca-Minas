@@ -109,7 +109,6 @@ button {
 }
 
 .text-intro {
-  text-justify: auto;
   font-size: 1.2rem;
 
   @media (width < 350px) {
