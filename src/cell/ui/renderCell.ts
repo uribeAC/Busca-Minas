@@ -1,5 +1,5 @@
 import { getAdjacentMinesTotal } from "../../board/getAdjacentMines.js";
-import { gameOver } from "../../board/ui/renderGameOver.js";
+import { renderGameOver } from "../../board/ui/renderGameOver.js";
 import { completeBoard } from "../../index.js";
 import { Cell } from "../data/type.js";
 
@@ -15,7 +15,7 @@ export const renderCellElement = (cell: Cell): HTMLElement => {
       cellElement.innerHTML = `
     <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
 
-      gameOver();
+      renderGameOver();
       return;
     }
 
