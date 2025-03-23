@@ -13,13 +13,13 @@ export const minesBoard = generateBoardWithMines(board);
 
 export const completeBoard = generateCompleteBoard(minesBoard);
 
-const container = document.querySelector(".game__window");
+export const containerElement = document.querySelector(
+  ".game__window"
+) as HTMLElement;
 
-if (!container) {
+if (!containerElement) {
   throw new Error("Missinng HTML Element");
 }
-
-export const containerElement = container as HTMLElement;
 
 const boardElement = createBoardElement(completeBoard);
 renderBoard(boardElement, containerElement);

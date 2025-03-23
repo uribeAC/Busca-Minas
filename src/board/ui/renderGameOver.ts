@@ -2,16 +2,17 @@ import { containerElement } from "../../index.js";
 import { renderNewGame } from "./renderNewGame.js";
 
 export const renderGameOver = () => {
-  const cellsButtonsElements = document.querySelectorAll(".cell");
-  cellsButtonsElements.forEach((cell) => {
-    const cellButtonElement = cell as HTMLButtonElement;
+  const cellsButtonsElements = document.querySelectorAll(
+    ".cell"
+  ) as NodeListOf<HTMLButtonElement>;
+  cellsButtonsElements.forEach((cellButtonElement) => {
     cellButtonElement.disabled = true;
   });
 
   const cellsElements = document.querySelectorAll(".game-over");
   cellsElements.forEach((cellElement) => {
     cellElement.innerHTML = `
-      <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
+      <img class="mine" src="/images/bomb-tile.webp" alt="Mine" width="15" heigth="15">`;
   });
 
   const gameOverMessage = document.createElement("span");

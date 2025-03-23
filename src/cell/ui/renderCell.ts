@@ -13,7 +13,7 @@ export const renderCellElement = (cell: Cell): HTMLElement => {
     if (cell.hasMine) {
       cellElement.classList.add("cell--mine");
       cellElement.innerHTML = `
-    <img class ="mine" src="/images/bomb-tile.svg" alt="Mine" />`;
+      <img class="mine" src="/images/bomb-tile.webp" alt="Mine" width="15" heigth="15">`;
 
       renderGameOver();
       return;
