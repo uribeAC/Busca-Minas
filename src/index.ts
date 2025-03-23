@@ -3,6 +3,7 @@ import { generateBoardWithMines } from "./board/generateBoardWithMines.js";
 import { generateCompleteBoard } from "./board/generateCompleteBoard.js";
 import { getRandomPositions } from "./board/getRandomPositions.js";
 import { createBoardElement, renderBoard } from "./board/ui/renderBoard.js";
+import { renderMinesTotal } from "./board/ui/renderMinesTotal.js";
 import { renderVictory } from "./board/ui/renderVictory.js";
 
 export const board = generateBoard(8);
@@ -23,4 +24,5 @@ export const containerElement = container as HTMLElement;
 const boardElement = createBoardElement(completeBoard);
 renderBoard(boardElement, containerElement);
 
+renderMinesTotal(completeBoard);
 renderVictory();
